@@ -45,13 +45,13 @@ canvas实现动态背景图方法，两种模式，可全屏切换多图，也�
 			&emsp;&emsp;});<br/>
 			</li>
 			<li>
-				多图片模式：两幅图，利用setTimeout显示,保持100ms刷新<br/>
+				多图片模式：循环创建src数组，利用setTimeout显示,保持100ms刷新<br/>
 				&emsp;&emsp;let src = (function(){<br/>
-				&emsp;&emsp;let src = [];<br/>
-				&emsp;&emsp;for(let i =0; i < 33; i++){<br/>
-						&emsp;&emsp;&emsp;&emsp;src.push("pic"+i+".jpg");<br/>
-				&emsp;&emsp;}<br/>
-				&emsp;&emsp;return src;<br/>
+				&emsp;&emsp;&emsp;&emsp;let src = [];<br/>
+				&emsp;&emsp;&emsp;&emsp;for(let i =0; i < 33; i++){<br/>
+						&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;src.push("pic"+i+".jpg");<br/>
+				&emsp;&emsp;&emsp;&emsp;}<br/>
+				&emsp;&emsp;&emsp;&emsp;return src;<br/>
 		&emsp;&emsp;}());<br/>
 			&emsp;&emsp;easy_DynamicBg.create("bgCanvas2", src, {<br/>
 						&emsp;&emsp;&emsp;&emsp;multiple : true,<br/>
