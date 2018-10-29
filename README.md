@@ -44,6 +44,7 @@ canvas实现动态背景图方法，两种模式，可全屏切换多图，也�
 					&emsp;&emsp;&emsp;&emsp;x : 4,<br/>
 			&emsp;&emsp;});<br/>
 			</li>
+			<li>
 				多图片模式：两幅图，利用setTimeout显示,保持100ms刷新<br/>
 				&emsp;&emsp;let src = (function(){<br/>
 				&emsp;&emsp;let src = [];<br/>
