@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>动态背景demo</title>
+	</head>
+	<body>
+		<canvas id="bgCanvas1" width=500 height="500" title="">
+		</canvas>
+		<canvas id="bgCanvas2" width=500 height="500" title="">
+		</canvas>
+		<script type="text/javascript" src="../easyUtil.dynamicBg.min.1.1.js" ></script>
+		<script>
+			let srcs = "people.png"
+			let src = (function(){
+				let src = [];
+				for(let i = 0; i < 11; i++){
+					src.push("snow"+i+".jpg");
+					src.unshift("snow"+i+".jpg");
+				}
+				return src;
+			}());
+			//requestAnimation单独图片切换坐标模式
+			easy_DynamicBg.create("bgCanvas1", srcs, {
+				multiple : false,
+				width : 50, 
+				height : 65,
+				offsetX : 200,
+				offsetY : 100,
+				x : 4,
+				bgSwitch:true
+			});
+			setTimeout(function(){
+				document.querySelector("#bgCanvas1").style.display = "none";
+				//计时器全屏背景模式
+				easy_DynamicBg.create("bgCanvas2", src, {
+					multiple : true,
+					timer: true,
+					speed:100,
+					bgSwitch:true
+				});
+			},1000)
+			//切换
+			setTimeout(function(){
+				document.querySelector("#bgCanvas1").style.display = "block";
+				document.querySelector("#bgCanvas2").style.display = "none";
+			},5000)
+			setTimeout(function(){
+				document.querySelector("#bgCanvas1").style.display = "none";
+				document.querySelector("#bgCanvas2").style.display = "block";
+			},8000)
+		</script>
+	</body>
+</html>
