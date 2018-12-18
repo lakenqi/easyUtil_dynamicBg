@@ -10,7 +10,7 @@
 		</canvas>
 		<canvas id="bgCanvas2" width=500 height="500" title="">
 		</canvas>
-		<script type="text/javascript" src="../easyUtil.dynamicBg.min.1.1.js" ></script>
+		<script type="text/javascript" src="../easyUtil.dynamicBg.min.1.2.js" ></script>
 		<script>
 			let srcs = "people.png"
 			let src = (function(){
@@ -33,12 +33,16 @@
 			});
 			setTimeout(function(){
 				document.querySelector("#bgCanvas1").style.display = "none";
-				//计时器全屏背景模式
+				//计时器全屏背景模式 单次动画
 				easy_DynamicBg.create("bgCanvas2", src, {
 					multiple : true,
 					timer: true,
 					speed:100,
-					bgSwitch:true
+					bgSwitch:true,
+					callback:function(){
+						console.log('结束了！')
+					},
+					once: true   //单次动画
 				});
 			},1000)
 			//切换

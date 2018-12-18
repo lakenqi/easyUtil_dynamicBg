@@ -1,5 +1,5 @@
 # easyUtil_dynamicBg
-canvas实现动态背景图方法，两种模式，可全屏切换多图，也可在单一图片按位置切换。
+canvas实现动态背景图方法，两种模式，可全屏切换多图，也可在单一图片按位置切换，更新1.2版
 <h3>简介</h3>
 		<h4>&emsp;&emsp;原生js加canvas脚本功能实现动态背景图功能可选两种动画模式:setTimeout传统模式和requestAnimation的H5新增动画模式</h4>
 		<h4>&emsp;&emsp;支持多帧图切换播放及单图片按位置切换方式</h4>
@@ -20,9 +20,9 @@ canvas实现动态背景图方法，两种模式，可全屏切换多图，也�
 								&emsp;&emsp;&emsp;&emsp;src：第二参数，{Array} 图片的src连接名称，必填，单图片情况可以是字符串也可以是数组，多图片必须数组；<br/>
 								&emsp;&emsp;&emsp;&emsp;第三参数（根据需求选填）：{<br/>
 						&emsp;&emsp;&emsp;&emsp;&emsp;multiple:false，单图片或多图片模式，默认false单图片；<br/>
-						&emsp;&emsp;&emsp;&emsp;&emsp;once:true，多图片模式下，动画播放次数，默认true，只播放一次，设为false则循环播放；<br/>
+						&emsp;&emsp;&emsp;&emsp;&emsp;once:true，多图片模式下，动画播放次数，默认true，单次播放，设为false则循环播放；<br/>
 						&emsp;&emsp;&emsp;&emsp;&emsp;timer:false，是否开始计时器模式(true)，默认requestAnimation模式；<br/>
-						&emsp;&emsp;&emsp;&emsp;&emsp;bgSwitch:false，是否有多组动态背景（多个canvas）切换，默认false，如果设为true，将打开自动暂停和播放功能，如当前canvas处于隐藏状态，则停止播放动画，否则开启动画<br/>
+						&emsp;&emsp;&emsp;&emsp;&emsp;bgSwitch:false，是否有多组动态背景（多个canvas）切换，默认false，多图片模式单次播放时此参数无效；如果设为true，将打开自动暂停和播放功能，如当前canvas处于隐藏状态，则停止播放动画，否则开启动画<br/>
 						&emsp;&emsp;&emsp;&emsp;&emsp;speed:100，计时器模式下的播放速度，默认100ms，最快设置50ms,为了保证正常的动画效果，建议保持100ms,timer为false时该参数无效；<br/>
 					&emsp;&emsp;&emsp;&emsp;&emsp;width:0，需显示图片的宽，多图片模式可不填写，默认为canvas的全屏宽高；<br/>
 						&emsp;&emsp;&emsp;&emsp;&emsp;height:0，需显示图片的高，多图片模式可不填写，默认为canvas的全屏宽高；<br/>
@@ -30,6 +30,7 @@ canvas实现动态背景图方法，两种模式，可全屏切换多图，也�
 						&emsp;&emsp;&emsp;&emsp;&emsp;offsetY:0，单图片模式下，图片在canvas画布上显示的偏移坐标y, 多图片模式下无效，不用填写；<br/>
 						&emsp;&emsp;&emsp;&emsp;&emsp;x:0，单图片模式下，每行x的图片数量，如果相同，则可以只写x的值，多图模式下无效，不用填写；<br/>
 						&emsp;&emsp;&emsp;&emsp;&emsp;y:0，单图片模式下，每列y的图片数量，如果相同，则可以只写x的值，多图模式下无效，不用填写。<br/>
+						&emsp;&emsp;&emsp;&emsp;&emsp;callback:function(){}，多图片模式，单次播放时，可设置此回调函数，其他模式下无效。<br/>
 						&emsp;&emsp;&emsp;&emsp;}<br/>
 					&emsp;&emsp;)<br/>
 			</li>
